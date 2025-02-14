@@ -1,0 +1,207 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+    <title>DIYtron</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/ui.css" />
+    <link rel="stylesheet" href="../static/css_knobs.css" />
+    <meta name="viewport" content="user-scalable=no, width=device-width">
+    <script type="text/javascript" src="../static/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/Knob.js"></script>
+    </head>
+<body>
+    <div class="centerBox">
+        <div>
+            <div class="blueScreen" id="leftScreen">
+            </div>
+            <div class="knobBox">
+                <input id="position-rotate-css-knob"
+                name="position-rotate-css-knob"
+                type="range"
+                value="50"
+                min="0" max="100"
+                data-angle-start="210"
+                data-angle-end="-30"
+                data-indicator-auto-position="true"
+                data-indicator-auto-rotate="true"
+                data-indicator-radius="22"
+                />
+                <input id="position-rotate-css-knob2"
+                name="position-rotate-css-knob"
+                type="range"
+                value="50"
+                min="0" max="100"
+                data-angle-start="210"
+                data-angle-end="-30"
+                data-indicator-auto-position="true"
+                data-indicator-auto-rotate="true"
+                data-indicator-radius="22"
+                />
+                <input id="position-rotate-css-knob3"
+                name="position-rotate-css-knob"
+                type="range"
+                value="50"
+                min="0" max="100"
+                data-angle-start="210"
+                data-angle-end="-30"
+                data-indicator-auto-position="true"
+                data-indicator-auto-rotate="true"
+                data-indicator-radius="22"
+                />
+            </div>
+            <div id="splitBox">
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+                <div>SPLIT CHANNELS</div>
+            </div>
+        </div>
+        <div>
+            <div class="blueScreen" id="leftScreen">
+            </div>
+            <div class="knobBox">
+                <input id="position-rotate-css-knob4"
+                name="position-rotate-css-knob"
+                type="range"
+                value="1"
+                min="0" max="100"
+                data-angle-start="210"
+                data-angle-end="-30"
+                data-indicator-auto-position="true"
+                data-indicator-auto-rotate="true"
+                data-indicator-radius="22"
+                />
+                <input id="position-rotate-css-knob5"
+                name="position-rotate-css-knob"
+                type="range"
+                value="1"
+                min="0" max="100"
+                data-angle-start="210"
+                data-angle-end="-30"
+                data-indicator-auto-position="true"
+                data-indicator-auto-rotate="true"
+                data-indicator-radius="22"
+                />
+                <input id="position-rotate-css-knob6"
+                name="position-rotate-css-knob"
+                type="range"
+                value="1"
+                min="0" max="100"
+                data-angle-start="210"
+                data-angle-end="-30"
+                data-indicator-auto-position="true"
+                data-indicator-auto-rotate="true"
+                data-indicator-radius="22"
+                />
+            </div>
+            <div id="splitBox">
+                <div style="font-size: 22px;">REVERB</div>
+                <div class="knobBox">
+                    <input id="r-wet-knob"
+                    name="position-rotate-css-knob"
+                    type="range"
+                    value="1"
+                    min="0" max="100"
+                    data-angle-start="210"
+                    data-angle-end="-30"
+                    data-indicator-auto-position="true"
+                    data-indicator-auto-rotate="true"
+                    data-indicator-radius="22"
+                    />
+                    <input id="r-damp-knob"
+                    name="position-rotate-css-knob"
+                    type="range"
+                    value="50"
+                    min="0" max="100"
+                    data-angle-start="210"
+                    data-angle-end="-30"
+                    data-indicator-auto-position="true"
+                    data-indicator-auto-rotate="true"
+                    data-indicator-radius="22"
+                    />
+                    <input id="r-width-knob"
+                    name="position-rotate-css-knob"
+                    type="range"
+                    value="50"
+                    min="0" max="100"
+                    data-angle-start="210"
+                    data-angle-end="-30"
+                    data-indicator-auto-position="true"
+                    data-indicator-auto-rotate="true"
+                    data-indicator-radius="22"
+                    />
+                </div>
+            </div>
+            <div id="splitBox">
+                <div class="knobBox">
+                    <input id="r-size-knob"
+                    name="position-rotate-css-knob"
+                    type="range"
+                    value="50"
+                    min="0" max="100"
+                    data-angle-start="210"
+                    data-angle-end="-30"
+                    data-indicator-auto-position="true"
+                    data-indicator-auto-rotate="true"
+                    data-indicator-radius="22"
+                    />
+                    <input id="r-lpass-knob"
+                    name="position-rotate-css-knob"
+                    type="range"
+                    value="100"
+                    min="0" max="100"
+                    data-angle-start="210"
+                    data-angle-end="-30"
+                    data-indicator-auto-position="true"
+                    data-indicator-auto-rotate="true"
+                    data-indicator-radius="22"
+                    />
+                    <input id="r-hpass-knob"
+                    name="position-rotate-css-knob"
+                    type="range"
+                    value="1"
+                    min="0" max="100"
+                    data-angle-start="210"
+                    data-angle-end="-30"
+                    data-indicator-auto-position="true"
+                    data-indicator-auto-rotate="true"
+                    data-indicator-radius="22"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        document.getElementById("r-wet-knob").oninput = function() {sendKnobData()};
+        function sendKnobData(){
+            console.log("HERE")
+        }
+    </script>
+    <script type="text/javascript" src="../static/ui.js"></script>
+    <script type="text/javascript" src="../static/knob_helper.js"></script>
+    <script type="text/javascript">
+
+    [{id:'position-rotate-css-knob', text:"ATTACK"},
+    {id:'position-rotate-css-knob2', text:"RELEASE"},
+    {id:'position-rotate-css-knob3', text:"OCTAVE"},
+    {id:'position-rotate-css-knob4', text:"ATTACK"},
+    {id:'position-rotate-css-knob5', text:"RELEASE"},
+    {id:'position-rotate-css-knob6', text:"OCTAVE"},
+    {id:'r-wet-knob', text:"WET"},
+    {id:'r-damp-knob', text:"DAMP"},
+    {id:'r-width-knob', text:"WIDTH"},
+    {id:'r-size-knob', text:"SIZE"},
+    {id:'r-lpass-knob', text:"LPASS"},
+    {id:'r-hpass-knob', text:"HPASS"},
+    ].map((name) => {
+      KnobHelper.createKnobCSS(document.getElementById(name.id), name.id, name.text)
+  })
+  </script>
+
+</body>
+</html>
