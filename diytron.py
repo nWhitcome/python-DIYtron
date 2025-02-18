@@ -25,6 +25,7 @@ def loop(midiin):
         checkQueue()
         m = midiin.getMessage(0) # some timeout in ms
         if m and m.isNoteOn():
+            fs.set_gen(2, 34, 1000)
             fs.noteon(0, m.getNoteNumber(), m.getVelocity())
         if m and m.isNoteOff():
             fs.noteoff(0, m.getNoteNumber())
@@ -66,20 +67,14 @@ def updateParameter():
     return jsonify(msg)
 
 if __name__ == "__main__":
-    fs = fluidsynth.Synth()
+    fs = fluidsynth.Synth(midiinput = '2')
     fs.start(driver='dsound')
     sfid = fs.sfload('./DIYtron.sf2')
-    fs.program_select(0, sfid, 0, 0)
+    fs.program_select(0, sfid, 0, 1)
     fs.set_reverb(roomsize=0.5, damping=0.5, width=50.0, level=0)
+    settings = fluidsynth.new_fluid_settings()
+    fs.set_gen(2, 34, 1000)
     qVal = Queue()
     p1 = Process(target=buildFlaskApp, args=(qVal,))
-    p1.start()
+    p1.start() 
     openMidiInput()
-
-# def print_message(midi):
-#     if midi.isNoteOn():
-#         print('ON: ', midi.getMidiNoteName(midi.getNoteNumber()), midi.getVelocity())
-#     elif midi.isNoteOff():
-#         print('OFF:', midi.getMidiNoteName(midi.getNoteNumber()))
-#     elif midi.isController():
-#         print('CONTROLLER', midi.getControllerNumber(), midi.getControllerValue())
